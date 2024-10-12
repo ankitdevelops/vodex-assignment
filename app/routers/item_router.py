@@ -7,6 +7,7 @@ from services.item_service import (
     update_item,
     delete_item,
     filter_items,
+    aggregate_items_by_email,
 )
 from fastapi.encoders import jsonable_encoder
 
@@ -14,6 +15,8 @@ router = APIRouter()
 
 
 def item_helper(item) -> dict:
+    if "count" in item and "_id" in item:
+        return {"email": item["_id"], "count": item["count"]}
     return {
         "id": str(item["_id"]),
         "name": item["name"],
@@ -42,8 +45,14 @@ async def filter(
 ):
     result = await filter_items(email, expiry_date, insert_date, quantity)
     result = [item_helper(doc) for doc in result]
-    return result
-    return ResponseModel(result, "record fetched successfully")
+    return ResponseModel(result[0], "record fetched successfully")
+
+
+@router.get("/items/aggregate")
+async def aggregate_item():
+    records = await aggregate_items_by_email()
+    result = [item_helper(doc) for doc in records]
+    return ResponseModel(result[0], "record fetched successfully")
 
 
 @router.get("/items/{item_id}")

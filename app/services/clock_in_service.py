@@ -20,6 +20,8 @@ async def delete_clock_in(id: str):
 
 
 async def update_clock_in(id: str, clock_in_data: dict):
+    if "insert_datetime" in clock_in_data:
+        del clock_in_data["insert_datetime"]
     result = await ClockInRecords.update_one(
         {"_id": ObjectId(id)}, {"$set": clock_in_data}
     )

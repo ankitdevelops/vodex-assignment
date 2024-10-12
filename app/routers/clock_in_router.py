@@ -35,7 +35,6 @@ async def filter_data(
 ):
     result = await filter_clock_ins(email, location, insert_datetime)
     result = [clock_in_helper(doc) for doc in result]
-    return result
     return ResponseModel(result, "record fetched successfully")
 
 

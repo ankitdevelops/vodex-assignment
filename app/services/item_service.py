@@ -15,6 +15,8 @@ async def get_item_by_id(item_id: str):
 
 
 async def update_item(item_id: str, item_data: dict):
+    if "insert_date" in item_data:
+        del item_data["insert_date"]
     updated_item = await Item.update_one(
         {"_id": ObjectId(item_id)},
         {"$set": item_data},
@@ -39,3 +41,9 @@ async def filter_items(email=None, expiry_date=None, insert_date=None, quantity=
     if quantity:
         query["quantity"] = {"$gte": quantity}
     return await Item.find(query).to_list(None)
+
+
+async def aggregate_items_by_email():
+    return await Item.aggregate(
+        [{"$group": {"_id": "$email", "count": {"$sum": 1}}}]
+    ).to_list(None)
