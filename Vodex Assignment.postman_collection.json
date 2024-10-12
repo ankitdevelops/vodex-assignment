@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "5e1f4cbc-6476-4c04-ac37-16d133cd24ae",
+		"name": "Vodex Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17617479",
+		"_collection_link": "https://ankitdevelopsteam.postman.co/workspace/My-Workspace~ab8bffc8-c2cc-48d1-87f3-533e8279f0c6/collection/17617479-5e1f4cbc-6476-4c04-ac37-16d133cd24ae?action=share&source=collection_link&creator=17617479"
+	},
+	"item": [
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "FILTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/items/filter?email=test@email.com&expiry_date=2024-10-13&insert_date=2024-10-13&quantity=2",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"items",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test@email.com"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2024-10-13"
+								},
+								{
+									"key": "insert_date",
+									"value": "2024-10-13"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGGEGRATE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/items/aggregate",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"items",
+								"aggregate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ITEM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/items/6709f8ce5472b76961efbb2f",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"items",
+								"6709f8ce5472b76961efbb2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@email.com\",\n    \"expiry_date\": \"2024-10-13\",\n    \"item_name\": \"Test Item\",\n    \"name\": \"Test Kumar\",\n    \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/items",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@email.com\",\n    \"expiry_date\": \"2024-10-13\",\n    \"item_name\": \"Test Item\",\n    \"name\": \"Test Updted\",\n    \"quantity\": 22\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/items/670a1b23e3ac020ac50aeb0f",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"items",
+								"670a1b23e3ac020ac50aeb0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clock IN",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"johnkr@email.com\",\n  \"location\": \"New York\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/clock-in",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"clock-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/clock-in/6709fd069181af72ae4f1445",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"clock-in",
+								"6709fd069181af72ae4f1445"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/clock-in/6709fd069181af72ae4f1445",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"clock-in",
+								"6709fd069181af72ae4f1445"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"johnkrdd@email.com\",\n  \"location\": \"New Yorkddscd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/clock-in/6709fd94401bb66e5d8537e3",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"clock-in",
+								"6709fd94401bb66e5d8537e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vodex-assignment.onrender.com/clock-in/filter?email=johnkr@email.com&location=Gaya&insert_datetime=2024-10-10",
+							"protocol": "https",
+							"host": [
+								"vodex-assignment",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"clock-in",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "johnkr@email.com"
+								},
+								{
+									"key": "location",
+									"value": "Gaya"
+								},
+								{
+									"key": "insert_datetime",
+									"value": "2024-10-10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
