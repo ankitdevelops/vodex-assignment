@@ -45,14 +45,14 @@ async def filter(
 ):
     result = await filter_items(email, expiry_date, insert_date, quantity)
     result = [item_helper(doc) for doc in result]
-    return ResponseModel(result[0], "record fetched successfully")
+    return ResponseModel(result, "record fetched successfully")
 
 
 @router.get("/items/aggregate")
 async def aggregate_item():
     records = await aggregate_items_by_email()
     result = [item_helper(doc) for doc in records]
-    return ResponseModel(result[0], "record fetched successfully")
+    return ResponseModel(result, "record fetched successfully")
 
 
 @router.get("/items/{item_id}")
